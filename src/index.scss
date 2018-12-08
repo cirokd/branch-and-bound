@@ -1,0 +1,69 @@
+$light-green-color: #f1fff1;
+$dark-green-color: #c4f0c5;
+$light-red-color: #be3737;
+$dark-red-color: #6a0000;
+
+body {
+  font-family: sans-serif;
+}
+
+.problem-input {
+  table,
+  th,
+  td {
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 5px;
+    text-align: center;
+  }
+
+  .with-top-separator {
+    td {
+      border-top: 1px solid black;
+    }
+  }
+
+  input[type='number'] {
+    width: 40px;
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+
+    button {
+      margin: 0 10px 20px 20px;
+    }
+  }
+}
+
+.branch-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.branch {
+  padding: 20px;
+  margin: 10px;
+
+  &.unknown {
+    background-color: inherit;
+  }
+
+  &.unbounded,
+  &.not-feasible,
+  &.local-optimum {
+    background-color: $dark-red-color;
+  }
+
+  &.non-integer-optimum {
+    background-color: $light-green-color;
+  }
+
+  &.integer-optimum {
+    background-color: $dark-green-color;
+  }
+}
