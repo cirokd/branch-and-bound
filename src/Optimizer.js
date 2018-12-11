@@ -71,9 +71,9 @@ class Optimizer extends Component<Props, State> {
 
     const newStatus =
       result == null
-        ? { label: 'unbounded' }
-        : result.max === 0
         ? { label: 'not feasible' }
+        : result.max === 0
+        ? { label: 'unbounded' }
         : result.max <= optimum
         ? { label: 'local optimum' }
         : {
